@@ -9,7 +9,7 @@ const findGeoLocation = async (req, res) => {
     let geolocationData = await Geolocation.findOne({ address });
 
     if (!geolocationData) {
-      const apiKey = "fdd9a38794454ed5be0f4354c8af6862"; // Replace with your OpenCage API key
+      const apiKey = process.env.API_KEY // Replace with your OpenCage API key
       const apiResponse = await axios.get(
         `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(
           address

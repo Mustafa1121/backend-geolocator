@@ -7,7 +7,9 @@ const geolocationRoutes = require("./routes/geoLocationRoute");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin:"https://client-geolocator.vercel.app/"
+}));
 app.use(express.json());
 
 // Routes
