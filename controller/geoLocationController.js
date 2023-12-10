@@ -27,11 +27,7 @@ const findGeoLocation = async (req, res) => {
     res.status(200).json(geolocationData);
 
     const emailInstance = new Email(email);
-     try {
-      emailInstance.sendGeoLocationResult(geolocationData);
-    } catch (err) {
-      console.log(err);
-    }
+    await emailInstance.sendGeoLocationResult(geolocationData);
   } catch (error) {
     console.error("Error:", error.message);
     res.status(500).json({ error: "Internal Server Error" });
