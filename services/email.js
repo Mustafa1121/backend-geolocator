@@ -10,6 +10,7 @@ class Email {
   newTransport() {
     return nodemailer.createTransport({
       service: process.env.EMAIL_HOST,
+      port:465,
       auth: {
         user: process.env.EMAIL_USERNAME,
         pass: process.env.EMAIL_PASSWORD,
