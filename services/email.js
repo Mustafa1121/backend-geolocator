@@ -36,13 +36,6 @@ class Email {
     
   }
 
-  async sendCodeVerification(code) {
-    const subject = "Code Verification";
-    const text = `Your verification code is: ${code}`;
-
-    await this.send(text, subject);
-  }
-
   async sendGeoLocationResult(geolocationData) {
     const subject = "Geolocation Results"
     const text= `Latitude: ${geolocationData.latitude}, Longitude: ${geolocationData.longitude}`
