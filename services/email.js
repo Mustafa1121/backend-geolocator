@@ -8,7 +8,6 @@ class Email {
   }
 
   newTransport() {
-    console.log(process.env.EMAIL_HOST,process.env.EMAIL_PORT,process.env.EMAIL_USERNAME, process.env.EMAIL_PASSWORD)
     return nodemailer.createTransport({
       service: process.env.EMAIL_HOST,
       auth: {
@@ -27,11 +26,10 @@ class Email {
       subject,
       text: template
     };
-
     // 3) Create a transport and send email
     try{
       await this.newTransport().sendMail(mailOptions);
-    console.log("email sent")
+      console.log("email sent")
     }catch(err){
       console.log(err)
     }
