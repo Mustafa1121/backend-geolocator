@@ -4,7 +4,7 @@ class Email {
   constructor(email, url="") {
     this.to = email;
     this.url = url;
-    this.from = `Name of the platform <${process.env.EMAIL_FROM}>`;
+    this.from = `IT-PLUS`;
   }
 
   newTransport() {
